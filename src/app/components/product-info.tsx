@@ -8,7 +8,7 @@ export function ProductInfo() {
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-4xl font-extrabold text-gray-900 mb-3">
-            ANSHUL SHIRBHATE
+          Mathéo Raphaël
           </h1>
           <p className="text-lg text-gray-600">Luxury Brand</p>
           <div className="flex items-center mt-2 space-x-2">
