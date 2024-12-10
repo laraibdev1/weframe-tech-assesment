@@ -14,7 +14,7 @@ const ServicesSection = () => {
           Office ipsum you must be muted. It meeting commitment busy pain.
         </p>
 
-        {/* Services List Grid */}
+        {/* Service List Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Service 1 */}
           <ServiceCard
