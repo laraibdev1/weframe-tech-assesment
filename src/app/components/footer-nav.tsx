@@ -1,15 +1,13 @@
-import Link from "next/link"
-import { Twitter, Instagram, Linkedin } from 'lucide-react'
+import Link from "next/link";
+import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 export function FooterNav() {
   return (
     <div className="container py-12">
       {/* Footer container with padding */}
       <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-
         {/* Main Footer Sections: Infos, Legal, Account */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
-          
           {/* Practical Information */}
           <div className="space-y-4">
             <h3 className="font-medium text-sm text-gray-900">INFOS PRATIQUES</h3>
@@ -26,7 +24,7 @@ export function FooterNav() {
               </li>
               <li>
                 <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
-                  Mode d'emploi
+                  Mode d&apos;emploi
                 </Link>
               </li>
               <li>
@@ -75,7 +73,7 @@ export function FooterNav() {
               </li>
               <li>
                 <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
-                  Ma liste d'envie
+                  Ma liste d&apos;envie
                 </Link>
               </li>
               <li>
@@ -110,5 +108,5 @@ export function FooterNav() {
         </div>
       </div>
     </div>
-  )
+  );
 }
