@@ -24,7 +24,8 @@ export function FooterNav() {
               </li>
               <li>
                 <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
-                  Mode d&apos;emploi
+                Mode d&apos;emploi
+
                 </Link>
               </li>
               <li>
