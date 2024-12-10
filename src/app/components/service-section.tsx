@@ -1,6 +1,22 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-const ServicesSection = () => {
+// ServiceCard Props interface
+interface ServiceCardProps {
+  icon: ReactNode;  // ReactNode type for icon to handle any JSX element
+  title: string;
+  description: string;
+}
+
+// Reusable ServiceCard Component
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
+  <div className="flex flex-col items-center">
+    {icon}
+    <h3 className="text-lg font-medium text-gray-800">{title}</h3>
+    <p className="text-sm text-gray-500 mt-2">{description}</p>
+  </div>
+);
+
+const ServicesSection: React.FC = () => {
   return (
     <section className="bg-pink-50 py-12">
       {/* Container for the content, centers content and limits width */}
@@ -108,14 +124,5 @@ const ServicesSection = () => {
     </section>
   );
 };
-
-// Reusable ServiceCard Component
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center">
-    {icon}
-    <h3 className="text-lg font-medium text-gray-800">{title}</h3>
-    <p className="text-sm text-gray-500 mt-2">{description}</p>
-  </div>
-);
 
 export default ServicesSection;
