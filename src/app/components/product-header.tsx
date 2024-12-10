@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react'
 import { Input } from "@/app/components/ui/input"
+import Image from 'next/image' // for optimized image handling
 
 export function ProductHeader() {
   return (
@@ -20,10 +21,12 @@ export function ProductHeader() {
         </nav>
       </div>
       <div className="container mt-4 flex justify-center">
-        <img
-          src="/item.jpg"  {/* Image from public folder */}
-          alt="Item"
-          className="w-48 h-auto rounded-lg shadow-md transition-all duration-500 ease-in-out transform hover:scale-105"
+        <Image
+          src="/item.jpg"  // Image from the public folder
+          alt="Item"  // Provide meaningful alt text
+          width={192}  // Width of the image
+          height={192}  // Height of the image
+          className="rounded-lg shadow-md transition-all duration-500 ease-in-out transform hover:scale-105"
         />
       </div>
     </header>

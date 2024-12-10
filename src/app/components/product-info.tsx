@@ -1,14 +1,24 @@
+"use client"
+import { useState } from "react";
 import { Heart, Star } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 
 export function ProductInfo() {
+  const [mainImage, setMainImage] = useState("/aesthetic-chair.jpg");
+  const thumbnails = [
+    "/blue-chair.jpg",
+    "/relaxing-chair.jpg",
+    "/vibrant-chair.jpg",
+    "/wooden-chair.jpg",
+  ];
+
   return (
     <div className="space-y-8 p-6 bg-white rounded-lg shadow-lg max-w-4xl mx-auto">
       {/* Product Header */}
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-4xl font-extrabold text-gray-900 mb-3">
-          Mathéo Raphaël
+            Mathéo Raphaël
           </h1>
           <p className="text-lg text-gray-600">Luxury Brand</p>
           <div className="flex items-center mt-2 space-x-2">
@@ -21,7 +31,12 @@ export function ProductInfo() {
           </div>
         </div>
         <div>
-          <Button size="icon" variant="outline" className="rounded-full">
+          <Button
+            size="icon"
+            variant="outline"
+            className="rounded-full"
+            aria-label="Add to Wishlist"
+          >
             <Heart className="h-5 w-5 text-gray-800" />
           </Button>
         </div>
@@ -30,31 +45,20 @@ export function ProductInfo() {
       {/* Product Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
-          src="/aesthetic-chair.jpg"
-          alt="Product"
+          src={mainImage}
+          alt="Main Product Image"
           className="w-full h-auto rounded-lg object-cover"
         />
         <div className="grid grid-cols-2 gap-4">
-          <img
-            src="/blue-chair.jpg"
-            alt="Thumbnail"
-            className="w-full h-auto rounded-lg object-cover"
-          />
-          <img
-            src="/relaxing-chair.jpg"
-            alt="Thumbnail"
-            className="w-full h-auto rounded-lg object-cover"
-          />
-          <img
-            src="vibrant-chair.jpg"
-            alt="Thumbnail"
-            className="w-full h-auto rounded-lg object-cover"
-          />
-          <img
-            src="wooden-chair.jpg"
-            alt="Thumbnail"
-            className="w-full h-auto rounded-lg object-cover"
-          />
+          {thumbnails.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`Thumbnail ${idx + 1}`}
+              className="w-full h-auto rounded-lg object-cover cursor-pointer"
+              onClick={() => setMainImage(src)}
+            />
+          ))}
         </div>
       </div>
 
@@ -78,9 +82,7 @@ export function ProductInfo() {
 
       {/* Specifications Section */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Specifications
-        </h2>
+        <h2 className="text-2xl font-semibold text-gray-900">Specifications</h2>
         <div className="grid grid-cols-2 gap-4 text-gray-700">
           <p>
             <span className="font-semibold">Material:</span> 100% Genuine Leather
